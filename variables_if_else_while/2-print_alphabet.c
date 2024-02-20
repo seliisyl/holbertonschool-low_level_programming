@@ -1,22 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-/*
- * main - Entry point
+/**
+ * main - Prints the alphabetic
  *
- * Return Always 0 (success)
+ * Return: Always (Success)
  */
 int main(void)
 {
-	char letter = 'a';
+	char c;
 
-	while (letter <= 'z')
-
-	{
-		putchar(letter);
-		letter++;
-	}
+	for (c = 'a'; c <= 'z'; c++)
+		putchar(c);
 
 	putchar('\n');
 	return (0);
