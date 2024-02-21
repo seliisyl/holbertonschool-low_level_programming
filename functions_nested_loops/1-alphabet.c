@@ -11,7 +11,7 @@ void print_alphabet(void)
 {
 	char c;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
+	for (c = 'a'; c <= 'z'; c++)
 		write(1, &c, 1);
 
 	write(1, "\n", 1);
