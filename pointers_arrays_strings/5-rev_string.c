@@ -9,6 +9,7 @@ void rev_string(char *s)
 {
 	int length = 0;
 	char *begin, *end, temp; /*Calcule la longueur de la chaîne */
+	int i;
 
 	while (s[length] != '\0')
 	{
@@ -19,13 +20,13 @@ void rev_string(char *s)
 	begin = s;
 	end = s; /* Place le pointeur 'end' à la fin de la chaîne */
 
-	for (int i = 0; i < length - 1; i++)
+	for (i = 0; i < length - 1; i++)
 	{
 		end++;
 	}
 
 	/* Inverse la chaîne en utilisant les pointeurs 'begin' et 'end'*/
-	for (int i = 0; i < length / 2; i++)
+	for (i = 0; i < length / 2; i++)
 	{
 		/* Échange les caractères pointés par 'begin' et 'end' */
 		temp = *end;
