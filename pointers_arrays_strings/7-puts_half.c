@@ -20,12 +20,13 @@ void puts_half(char *str)
 	{
 		len++;
 	}
+
 	n = len / 2; /* Calcul de l'indice à partir duquel commencer l'affichage */
 
 	if (len % 2 == 1)
 /* Ajustemt de l'index de dprt pr ls chaînes de longueur impaire */
 	{
-		n = (len + 1 / 2);
+		n = (len + 1) / 2;
 	}
 
 	/* Affichage des caractères à partir de l'indice calculé */
