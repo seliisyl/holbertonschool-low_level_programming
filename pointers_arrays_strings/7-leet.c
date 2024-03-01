@@ -9,22 +9,22 @@
  */
 char *leet(char *str)
 {
-	int i1 = 0, i2;
-	char leet[8] = {'0', 'L', '?', 'E', 'A', '?', '?', 'T'};
+	char *leet_chars = "aeotlAEOTL";
+	char *leet_equivs = "43071";
 
-	while (str[i1])
+	int i, j;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (i2 = 0; i2 < 8; i2++)
+		for (j = 0; leet_chars[j] != '\0'; j++)
 		{
-			if (str[i1] == leet[i2] || (str[i1] + 32) == leet[i2])
+			if (str[i] == leet_chars[j])
 			{
-				str[i1] = leet[i2];
+				str[i] = leet_equivs[j];
 				break;
 			}
 		}
-		i1++;
 	}
 
 	return (str);
 }
-
