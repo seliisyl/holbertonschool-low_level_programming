@@ -10,7 +10,7 @@
 char *leet(char *str)
 {
 	char *leet_chars = "aeotlAEOTL";
-	char *leet_equivs = "43071";
+	char *leet_equivs = "4307143071";
 
 	int i, j;
 
