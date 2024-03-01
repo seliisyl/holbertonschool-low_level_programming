@@ -13,14 +13,15 @@ char *_strcat(char *dest, char *src)
 {
 	int i = 0, dest_len = 0;
 
+/* Trouver la longueur de la chaîne de destination */
 	while (dest[dest_len] != '\0')
 	{
 		dest_len++;
 	}
-
+/* Concaténer la chaîne source à la fin de la chaîne de destination */
 	while (src[i] != '\0')
 	{
-		dest[dest_len] = src[i];
+		dest[dest_len + i] = src[i];
 		i++;
 	}
 	dest[dest_len + i] = '\0';
