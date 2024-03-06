@@ -8,17 +8,23 @@
  *
  * Retour: Le résultat de x élevé à la puissance y. Si y est ineur 0,
  *         retourne -1 pour indiquer une erreur.
- *
  */
 int _pow_recursion(int x, int y)
 {
+	/* Vérifie si l'exposant< 0 */
 	if (y < 0)
-		return (-1);
-	/* Si y<0, return -1 (indication d'erreur) */
-	if (y == 0)
-		return (1);
-	/* Si y=0, retourne 1 */
+	{
+		/* Gère le cas où = 0 */
+		if (x == 0)
+			return (-1); /* Erreur: division par 0 */
+		else
+			return (-1); /* Erreur: résultat fractionnai */
+					}
 
-	return (x * _pow_recursion(x, y - 1));
-	/* Sinon, multiplie x par lui-même leve� la puissanc y-1 */
+		/* Cas de base : y = 0 */
+		if (y == 0)
+			return (1);
+
+		/* Récursion : multiplie x par lui-même, enecrementant y */
+		return (x * _pow_recursion(x, y - 1));
 }
