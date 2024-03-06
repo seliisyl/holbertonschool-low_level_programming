@@ -6,21 +6,18 @@
  * @x: Entier representant de base.
  * @y: Entier représentant l'exposat
  *
- * Retour: power number
+ * Return: Le résultat de x éle la puissance y <= 0
+ *         retourne 1. Sinon, retourne x élev�a la puissance y.
  */
 int _pow_recursion(int x, int y)
 {
 
 	if (y == 0)
 		return (1);
-
 	if (y == 1)
-		return (x); /* Erreur: résultat fractionnai */
-
+		return (x);
 	if (y > 1)
-		/* Récursion : multiplie x par lui-même, enecrementant y */
 		return (x * _pow_recursion(x, y - 1));
-
 	else
 		return (-1);
 }
