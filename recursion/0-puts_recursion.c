@@ -7,13 +7,12 @@
  */
 void _puts_recursion(char *s)
 {
-	if (*s == '\0') /* si le caractère courant est '\0' (fin de chaiîne) */
+	if (s[0] == '\0') /* si le caractère courant est '\0' (fin de chaiîne) */
 	{
-	putchar('\n'); /* imprime une nouvelle ligne */
-	return;
+		_putchar(s[0]);
+		_puts_recursion(s + 1); /* Apl récurssivemt la fonc°vc le ctère vt */
 	}
-
-	putchar(*s); /* imprime le caractère courant */
-	_puts_recursion(s + 1);
-/* Appelle récurssivemt la fonction avec le caractère suivant */
+	else
+		putchar('\n');	/* imprime une nouvelle ligne */
 }
+
