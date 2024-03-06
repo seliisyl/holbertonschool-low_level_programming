@@ -4,9 +4,8 @@
 /**
  * _sqrt_recursion - Calcl lA racine car� �narl d'1 nmbr de manière récur
  * @n: Nombre dont on veut calculer la racine carr�.
- *
- * Return: La racine carrée naturelle de .
- * Si n n'a pas de racine carrée naturell retourne -.
+ * @i: Nombre pour tester la racine carré.e
+ * Return: la racine carrée de n ou -1 s'il n'en a pas
  */
 int _sqrt_helper(int n, int i);
 
@@ -27,8 +26,7 @@ int _sqrt_recursion(int n)
  * @n: Nombre dont on veut calculer la racine carré
  * @i: Nombre pour tester la racine carrée
  *
- * Return: La racine carrée naturelle de .
- * Si n n'a pas de racine carrée naturelle, retourne -.
+ * Return: la racine carrée de n ou -1 s'il n'en a pa.
  */
 int _sqrt_helper(int n, int i)
 {
