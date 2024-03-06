@@ -9,8 +9,16 @@
  */
 int _strlen_recursion(char *s)
 {
-	if (s[o] != '\0')
-
-		return (1 + _strlen_recursion(s + 1);
-				return(0);
+	/* Vérifier si le caractère actuel est nul (fin de la chaî */
+	if (*s == '\0')
+	{
+		/* Si c'est le cas, retourner 0 (longueur nulle) */
+		return (0);
+	}
+	else
+	{
+		/* Sinon, appeler récursivement _strlen_recursion avec le caractère suivant dans la cha� */
+		/* Ajouter 1 à la longueur retournée p l'appel récur */
+		return(1 + _strlen_recursion(s + 1));
+	}
 }
