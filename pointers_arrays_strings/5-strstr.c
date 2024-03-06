@@ -8,31 +8,21 @@
  * Return: Si trouvée, renvoie un pointeur vers le début dea
  * sous-chaîne ; sinon, indique que la sous-chaîne n~@~Ya pas été tro.
  */
-char *_strstr(char *haystack, char *needle) {
-    // Vérification des entrées
-    if (haystack == NULL || needle == NULL) {
-        return NULL;
-    }
+char *_strstr(char *haystack, char *needle)
+{
+	int i, j;
 
-    // Parcourir la chaîne haystack
-    while (*haystack != '\0') {
-        char *h = haystack;  // Pointeur vers le début de l'occurrence potentielle
-        char *n = needle;    // Pointeur vers le début de la sous-chaîne
+	if (haystack == NULL || needle == NULL)
+		return (NULL);
 
-        // Parcourir la sous-chaîne needle
-        while (*h != '\0' && *n != '\0' && *h == *n) {
-            h++;
-            n++;
-        }
+	for (i = 0; haystack[i] != '\0'; i++)
+	{
+		for (j = 0; needle[j] != '\0' && haystack[i + j] == needle[j]; j++)
+		{
+			if (needle[j + 1] == '\0')
+				return (&haystack[i]);
+		}
+	}
 
-        // Vérifier si la sous-chaîne a été entièrement parcourue
-        if (*n == '\0') {
-            return haystack;  // Retourner un pointeur vers le début de l'occurrence
-        }
-
-        // Passer au caractère suivant dans haystack
-        haystack++;
-    }
-
-    return NULL;  // Si aucune occurrence n'a été trouvée
+	return (NULL);
 }
