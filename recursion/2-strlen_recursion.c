@@ -17,8 +17,8 @@ int _strlen_recursion(char *s)
 	}
 	else
 	{
-		/* Sinon, appeler récursivement _strlen_recursion avec le caractère suivant dans la cha� */
-		/* Ajouter 1 à la longueur retournée p l'appel récur */
-		return(1 + _strlen_recursion(s + 1));
+		/* Sinn, apl récursivet _strlen_recursion avec le ctère suit ds chaine � */
+		/* Ajouter 1 à la enth retournée p l'appel récur */
+		return (1 + _strlen_recursion(s + 1));
 	}
 }
