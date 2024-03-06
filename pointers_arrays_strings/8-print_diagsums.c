@@ -2,47 +2,29 @@
 #include <stdio.h>
 
 /**
- * print_diagsums - Calcule la somme des deux diagonales d'une matrice carrée.
- * @a: une matrice carrée d'entier.
+ * print_diagsums - Calcule la somme des deux diagonales d'une matrice carrée
+ * @a: une matrice carrée d'entier
  * @size: taille de la matrice.
  *
  * Return: retourne rien
  */
 void print_diagsums(int *a, int size)
 {
-	int som1 = 0; /* somme de la 1ère diagonale */
-	int som2 = 0; /* somme de la 2e diagonale */
-	int *ptr = a; /* pointeur vers le début de la matrice */
-	int i;
+	int i, j, k, d1, d2;
 
-	/* calcul des sommes des diagonales */
+	k = 0;
+	d1 = 0;
+	d2 = 0;
+
 	for (i = 0; i < size; i++)
-	{
-		som1 += *ptr; /* somme des éléments de la 1ère diagonale */
-		ptr += size + 1; /* d�lamt vers l'él�t suivt sur 1�r diagonale */
-	}
 
-	ptr = a + size - 1; /* pointeur vers le dernier él�nt de 2e diagonale */
+		for (j = 0; j < size; j++)
+		{
+			(i == j) ? d1 += a[k] : 0;
+			(i + j == size - 1) ? d2 += a[k] : 0;
+			k++;
+		}
 
-	/* calcul de la somme de la 2e diagonale */
-	for (i = 0; i < size; i++)
-	{
-		som2 += *ptr; /* somme des éléments de la 2e diagonale */
-		ptr += size - 1; /* d�lt vers l'él�t suivt sur 2e diagonale */
-	}
-
-	/* affichage des sommes avec putchar */
-	/* afficher la somme de la première diagonale */
-	for (; som1 > 0; som1 /= 10)
-	{
-		putchar(som1 % 10 + '0'); /* afficher chaque chiffre de la somme */
-	}
-	putchar(' ');
-	putchar(',');
-	/* afficher la somme de la deuxième diagonale */
-	for (; som2 > 0; som2 /= 10)
-	{
-		putchar(som2 % 10 + '0'); /* afficher chaque chiffre de la somme */
-	}
-	putchar('\n');
+	printf("%i, %i\n", d1, d2);
 }
+
