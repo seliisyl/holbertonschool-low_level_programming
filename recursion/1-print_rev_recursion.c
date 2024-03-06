@@ -10,7 +10,7 @@ void _print_rev_recursion(char *s)
 {
 	if (s[0] != '\0') /* si caactr actuel es caractre nul(fin de chane */
 	{
-		_putchar(s[0]);
-		_print_rev_recursion(s + 1); /* apl recurssivemt la fonct° ac le ct�re n */
-	}
+		_print_rev_recursion(s + 1); /* apl recurssivemt la fonct°*/
+						_putchar(s[0]);
+						}
 }
