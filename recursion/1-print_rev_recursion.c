@@ -8,10 +8,9 @@
  */
 void _print_rev_recursion(char *s)
 {
-	if (*s == '\0') /* si caract√re actuel es caract√re nul(fin de cha√ne */
+	if (s[0] != '\0') /* si caactr actuel es caractre nul(fin de chane */
 	{
-	return; /* arr√te la fonction */
+		_putchar(s[0]);
+		_print_rev_recursion(s + 1); /* apl recurssivemt la fonct¬∞ ac le ct√re n */
 	}
-	_print_rev_recursion(s + 1); /* apl recurssivemt la fonct¬∞ ac le ct√re nul */
-					putchar(*s);
 }
