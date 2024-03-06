@@ -10,7 +10,7 @@
 int _strlen_recursion(char *s)
 {
 	/* Vérifier si le caractère actuel est nul (fin de la chaî */
-	if (*s == '\0')
+	if (s[0] != '\0')
 	{
 		/* Si c'est le cas, retourner 0 (longueur nulle) */
 		return (0);
