@@ -14,9 +14,8 @@ int main(int __attribute__((unused)) argc, char *argv[])
 
 	/* argc : Le nombre d'arguments de la ligne de commande.*/
 	/* argv : Un tableau de chaînes contet ls argut de la ligne de comd. */
-	/* Imprimer le nom du programme */
 
 	/* Imprimer le nom du programme */
-	printf("Le nom du programme est : %s\n", nom_programme);
+	printf("%s\n", nom_programme);
 	return (0);
 }
