@@ -8,7 +8,7 @@
  *
  * Return: Toujour 0.
  */
-int main(int argc, char *argv[])
+int main(int argc, char __attribute__((unused)) *argv[])
 {
 	/* Afficher le nombre d'arguments */
 	printf("%d\n", argc - 1);
