@@ -2,27 +2,39 @@
 #include <stdio.h>
 
 /**
- * *_strstr - localise 1er occurrence de la sous-chaîn
- * @haystack: ici qu'on va rechercher la sous-chaîn
- * @needle: il s'agit de la sous-chaîne
- * Return: Si trouvée, renvoie un pointeur vers le début dea
- * sous-chaîne ; sinon, indique que la sous-chaîne n~@~Ya pas été tro.
+ * _strstr - Localise une sous-chaîn.
+ * @haystack: La chaîne dans laquelle chercher
+ * @needle: La sous-chaîn localiser.
+ *
+ * Return: Un pointeur vers le début de la sous-chaîne trouv,
+ * ou NULL si la sous-chaîne n'est pas trouv�.
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	char *hay_ptr;
+	char *ndl_ptr;
 
-	if (haystack == NULL || needle == NULL)
-		return (NULL);
-
-	for (i = 0; haystack[i] != '\0'; i++)
+	/* Parcourir la chaîne principale*/
+	while (*haystack)
 	{
-		for (j = 0; needle[j] != '\0' && haystack[i + j] == needle[j]; j++)
+		hay_ptr = haystack;
+		ndl_ptr = needle;
+
+		/* Comparer les caractères destring principale et de sous-chaine� */
+		while (*ndl_ptr && *hay_ptr == *ndl_ptr)
 		{
-			if (needle[j + 1] == '\0')
-				return (&haystack[i]);
+			hay_ptr++;
+			ndl_ptr++;
 		}
+
+		/* Si la sous-chaîne est trouvé*/
+		if (*ndl_ptr == '\0')
+			return (haystack);
+
+		/* Sinon, passer au caractère suivant dans la chaîne principal*/
+		haystack++;
 	}
 
+	/* La sous-chaîne n'a pas été trouvée, retournerL */
 	return (NULL);
 }
