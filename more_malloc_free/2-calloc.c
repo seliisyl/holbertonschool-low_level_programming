@@ -24,6 +24,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	/* init chq √l√met du tableau a 0 */
 	for (i = 0; i < nmemb * size; i++)
-		*(array + (i * size)) = 0;
+		array[i] = 0;
 	return (array);
 }
