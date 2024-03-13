@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
- * _calloc - alloue m√moire pr un array, en utilisabt malloc
- * @nmemb: nbr d'√l√ments.
- * @size: taille de l'√l√ment;
- * Return: renvoie un ptr vers un arrays d'√l√ment
+ * _calloc - alloue m√©moire pr un array, en utilisabt malloc
+ * @nmemb: nbr d'√l√©ments.
+ * @size: taille de l'√l√©ment;
+ * Return: renvoie un ptr vers un arrays d'√l√©ment
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
