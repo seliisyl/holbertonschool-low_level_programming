@@ -39,7 +39,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 
 	/* Allouer de la mémoire pour stocker une copie du propriét*/
-	new_dog1->owner = strdup(owner);
+	new_dog1->owner = (owner);
 	if (new_dog1->owner == NULL)
 	{
 		free(new_dog1->name);
