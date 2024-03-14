@@ -13,7 +13,8 @@
  * Cette fonction crée un nouveau chien en copiant les valeurs de `name`
  * et `owner` dans des emplacements mémoire alloués dynamiquement.
  * Elle renvoie un pointeur vs une struct `dog_t` représent le vx chien cré
- * Si la créa° échouer une raison quelconque, la font° renvoie NULL.
+ * Si la créa° échouer une raison quelconque, la font° renvoieL.
+ * Return: Un pointeur vers une nvlle struct dog_t, ou NULL en cas d'éche.
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
