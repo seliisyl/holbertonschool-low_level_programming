@@ -30,7 +30,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	/* Allouer de la mémoire pour stocker une copie du nom*/
-	new_dog1->name = strdup(name);
+	new_dog1->name = (name);
 	if (new_dog1->name == NULL)
 	{
 		free(new_dog1);
