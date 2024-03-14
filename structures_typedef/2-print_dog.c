@@ -16,14 +16,14 @@ void print_dog(struct dog *d)
 		return; /* si oui, return sans rien faire */
 
 	if (d->name == NULL) /* verifiez si le nom du chien est NULL */
-		printf("name: (nil)\n"); /* si oui return (nil) */
+		printf("Name: (nil)\n"); /* si oui return (nil) */
 	else
-		printf("Name: %s\n", d->name);
+		printf("Name: %s\n", d->name); /* Sinon, imprime le nom du chien */
 
-	printf("age: %.1f\n", d->age);
+	printf("Age: %.6f\n", d->age); /* Imprime l'âge du chien*/
 
 	if (d->owner == NULL) /* verifie si le propri du chien est NULL */
-		printf("owner: (nil\n");
+		printf("Owner: (nil)\n"); /* Si oui, imprime (nil) */
 	else
-		printf("owner: %s\n", d->owner);
+		printf("Owner: %s\n", d->owner);/* Sinn,print le proprio du dog */
 }
