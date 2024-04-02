@@ -14,10 +14,10 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *new_node;
 	int i;
 
-	for (i = 0; dup_str[i] != '\0'; i++)
-
-		/* Allocation de mémoire pour le v node */
-		new_node = malloc(sizeof(list_t));
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	/* Allocation de mémoire pour le v node */
+	new_node = malloc(sizeof(list_t));
 	if (new_node == NULL)
 	{
 		free(new_node);
@@ -31,7 +31,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	/* Mise a jour des champs len et next du nv node */
-	new_node->len = strlen(str);
+	new_node->len = i;
 	new_node->next = *head;
 	/* Mise a jour de la tête de list */
 	*head = new_node;
