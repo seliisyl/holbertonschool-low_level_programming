@@ -12,45 +12,35 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	/* init un pointeur au dernier node */
-	list_t *last_node = *head;
+	/* init des variable */
+	list_t *current;
+	list_t *new_node;
+	int c;
 
-	/* alloue de la memoire pr le nv node */
-	list_t *new_node = malloc(sizeof(list_t));
-	/* verifie si l'allocatÂ°a echouÃ©*/
+	current = *head;
+	while (current && current->next != NULL)
+		current = current->next;
+
+	for (c = 0; str[c] != '\0'; c++)
+		;
+
+	new_node = malloc(sizeof(list_t));
 	if (new_node == NULL)
+	{
 		return (NULL);
-
-	/* cp la chaine de caractÃre ds le nv node */
+	}
 	new_node->str = strdup(str);
-
-	/* verifire si la cp a echouÃ©*/
 	if (new_node->str == NULL)
 	{
-		/* libÃre la mÃmoireallouÃe pr le nv node */
 		free(new_node);
 		return (NULL);
 	}
-	new_node->len = strlen(str); /* Calcul de la longueur de la chaÃ®ne */
-	/* init le champ next du nv node a NULL */
+	new_node->len = c;
 	new_node->next = NULL;
 
-	/* verifie si la liste est vide */
-	if (*head == NULL)
-	{
-		/* si oui, le nv node devient la tÃte de liste */
+	if (current)
+		current->next = new_node;
+	else
 		*head = new_node;
-	}
-	else 
-	{
-		/* parcourt la liste jusqu'au dernier node */
-		while (last_node->next != NULL)
-		{
-			last_node = last_node->next;
-		}
-
-		/* Liaison du dernier noeud au nouveau noeud */
-		last_node->next = new_node;
-	}
 	return (new_node);
 }
